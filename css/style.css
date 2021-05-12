@@ -1,0 +1,128 @@
+:root {
+  --dark-blue: hsl(233, 47%, 7%);
+  --desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --main-paragraph-color: hsla(0, 0%, 100%, 0.75);
+  --stat-headings-color: hsla(0, 0%, 100%, 0.6);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--dark-blue);
+  color: #fff;
+}
+
+.home {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.home-card {
+  min-width: 75vw;
+  min-height: 60vh;
+  background-color: var(--desaturated-blue);
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.home-card-left {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 50%;
+  padding: 75px;
+  padding-right: 120px;
+}
+.home-card-left h1 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.home-card-left h1 span {
+  color: var(--soft-violet);
+}
+.home-card-left p {
+  font-weight: 400;
+  color: var(--main-paragraph-color);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.feature-container {
+  margin-top: auto;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.feature h3 {
+  color: var(--white);
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.feature p {
+  text-transform: uppercase;
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--stat-headings-color);
+  font-size: 13px;
+}
+.home-card-right {
+  flex: 0 0 50%;
+  background: linear-gradient(to right, hsla(277, 80%, 28%, 0.55), hsla(277, 80%, 28%, 0.55)),
+    url("../images/image-header-desktop.jpg") no-repeat;
+  background-size: cover;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 1600px) {
+  .home-card {
+    min-width: 1152px !important;
+    max-width: 1152px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .home-card {
+    flex-direction: column-reverse;
+    width: 90vw;
+    margin: 100px 0;
+  }
+  .home-card-left,
+  .home-card-right {
+    flex: unset;
+  }
+  .home-card-left {
+    padding: 40px;
+    text-align: center;
+  }
+  .home-card-left h1 {
+    font-size: 25px;
+  }
+  .feature-container {
+    flex-direction: column;
+    width: unset;
+    margin-top: 3rem;
+  }
+  .feature:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  .home-card-right {
+    min-height: 30vh;
+    background: linear-gradient(to right, hsla(277, 80%, 28%, 0.55), hsla(277, 80%, 28%, 0.55)),
+      url("../images/image-header-mobile.jpg") no-repeat;
+    background-size: cover;
+  }
+}
